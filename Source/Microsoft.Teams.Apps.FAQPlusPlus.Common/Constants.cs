@@ -73,12 +73,12 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common
         /// <summary>
         /// AskAnExpert - text that renders the ask an expert card.
         /// </summary>
-        public const string AskAnExpert = "ask an expert";
+//         public const string AskAnExpert = "ask an expert";
 
         /// <summary>
         /// Text associated with ask an expert command.
         /// </summary>
-        public const string AskAnExpertSubmitText = "QuestionForExpert";
+//         public const string AskAnExpertSubmitText = "QuestionForExpert";
 
         /// <summary>
         /// Feedback - text that renders share feedback card.
