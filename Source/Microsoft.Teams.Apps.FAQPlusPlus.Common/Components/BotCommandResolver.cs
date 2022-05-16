@@ -95,13 +95,13 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common.Components
 
             string text = (message.Text ?? string.Empty).Trim();
 
-            if (text.Equals(Strings.BotCommandAskExpert, StringComparison.CurrentCultureIgnoreCase) ||
-                text.Equals(Constants.AskAnExpert, StringComparison.InvariantCultureIgnoreCase))
-            {
-                this.logger.LogInformation("Sending user ask an expert card");
-                await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard())).ConfigureAwait(false);
-            }
-            else if (text.Equals(Strings.BotCommandFeedback, StringComparison.CurrentCultureIgnoreCase) ||
+            ///if (text.Equals(Strings.BotCommandAskExpert, StringComparison.CurrentCultureIgnoreCase) ||
+            ///    text.Equals(Constants.AskAnExpert, StringComparison.InvariantCultureIgnoreCase))
+            ///{
+            ///    this.logger.LogInformation("Sending user ask an expert card");
+            ///    await turnContext.SendActivityAsync(MessageFactory.Attachment(AskAnExpertCard.GetCard())).ConfigureAwait(false);
+            ///}
+            if (text.Equals(Strings.BotCommandFeedback, StringComparison.CurrentCultureIgnoreCase) ||
                 text.Equals(Constants.ShareFeedback, StringComparison.InvariantCultureIgnoreCase))
             {
                 this.logger.LogInformation("Sending user feedback card");
