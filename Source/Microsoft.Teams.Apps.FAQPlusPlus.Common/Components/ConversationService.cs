@@ -125,11 +125,11 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common.Components
             switch (text)
             {
                 // Sends user ask an expert card from the answer card.
-                case Constants.AskAnExpert:
-                    this.logger.LogInformation("Sending user ask an expert card (from answer)");
-                    var askAnExpertPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
-                    await this.SendActivityInChatAsync(turnContext, MessageFactory.Attachment(AskAnExpertCard.GetCard(askAnExpertPayload)), cancellationToken);
-                    break;
+//                 case Constants.AskAnExpert:
+//                     this.logger.LogInformation("Sending user ask an expert card (from answer)");
+//                     var askAnExpertPayload = ((JObject)message.Value).ToObject<ResponseCardPayload>();
+//                     await this.SendActivityInChatAsync(turnContext, MessageFactory.Attachment(AskAnExpertCard.GetCard(askAnExpertPayload)), cancellationToken);
+//                     break;
 
                 // Sends user the feedback card from the answer card.
                 case Constants.ShareFeedback:
@@ -139,16 +139,16 @@ namespace Microsoft.Teams.Apps.FAQPlusPlus.Common.Components
                     break;
 
                 // User submits the ask an expert card.
-                case Constants.AskAnExpertSubmitText:
-                    this.logger.LogInformation("Received question for expert");
-                    newTicket = await AdaptiveCardHelper.AskAnExpertSubmitText(message, turnContext, cancellationToken, this.ticketsProvider).ConfigureAwait(false);
-                    if (newTicket != null)
-                    {
-                        smeTeamCard = new SmeTicketCard(newTicket).ToAttachment();
-                        userCard = new UserNotificationCard(newTicket).ToAttachment(Strings.NotificationCardContent);
-                    }
+//                 case Constants.AskAnExpertSubmitText:
+//                     this.logger.LogInformation("Received question for expert");
+//                     newTicket = await AdaptiveCardHelper.AskAnExpertSubmitText(message, turnContext, cancellationToken, this.ticketsProvider).ConfigureAwait(false);
+//                     if (newTicket != null)
+//                     {
+//                         smeTeamCard = new SmeTicketCard(newTicket).ToAttachment();
+//                         userCard = new UserNotificationCard(newTicket).ToAttachment(Strings.NotificationCardContent);
+//                     }
 
-                    break;
+//                     break;
 
                 // User submits the share feedback card.
                 case Constants.ShareFeedbackSubmitText:
